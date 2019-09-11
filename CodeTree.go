@@ -175,6 +175,8 @@ func FromReader(src io.Reader) (*CodeTree, error) {
 		if err = addNode(); err != nil {
 			return err
 		}
+		tabs = 0
+		spaces = 0
 		lastLineNumber = lineNumber
 		return nil
 	}
