@@ -323,6 +323,7 @@ func FromFilelist(filelist []string) (*CodeTree, error) {
 		errsLock.Lock()
 		errs = append(errs, message)
 		errsLock.Unlock()
+		wg.Done()
 	}
 
 	for i, filename := range filelist {
